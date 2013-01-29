@@ -1,0 +1,23 @@
+000:2498
+001:000002498
+002:28.01.1993
+003:29.10.2002
+005.001:92-m102
+014:Dt 27 k 63
+015:dt
+027:V
+040.001:SRZ52
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%222498%22
+098:konv-10
+099:38-96
+100.001:Gerber, Carl Friedrich Wilhelm von
+331:Grundzüge eines Systems des deutschen Staatsrechts
+359:Von C. F. v. Gerber
+410.001:Leipzig
+412.001:Tauchnitz
+425:1865
+433:XII, 208 S.
+575:ad19b
+710.001:Deutschland / Staatsrecht
+999:
+

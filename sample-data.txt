@@ -1,0 +1,1002 @@
+000:2498
+001:000002498
+002:28.01.1993
+003:29.10.2002
+005.001:92-m102
+014:Dt 27 k 63
+015:dt
+027:V
+040.001:SRZ52
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%222498%22
+098:konv-10
+099:38-96
+100.001:Gerber, Carl Friedrich Wilhelm von
+331:Grundzüge eines Systems des deutschen Staatsrechts
+359:Von C. F. v. Gerber
+410.001:Leipzig
+412.001:Tauchnitz
+425:1865
+433:XII, 208 S.
+575:ad19b
+710.001:Deutschland / Staatsrecht
+999:
+
+000:2591
+001:000002591
+002:05.03.1990
+003:29.10.2002
+005.001:90-489
+014:Dt 19 Ck 42
+015:dt
+027:V
+031.001:90-0001050
+040.001:SRZ31
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%222591%22
+080.001:Kopie
+098:konv-10
+099:24-97
+100.001:Völderndorff und Waradein, Otto von
+331:Die richterliche Thätigkeit der Centralcommission für die Rheinschiffahrt v
+on 1832 bis 1894
+359:Dargest. von Otto von Völderndorff. Hrsg. vom Rheinschiffs-Register-Verbande
+410.001:Frankfurt a.M.
+425:1894
+433:47 S.
+575:ad19bK
+578:Xerokopie
+710.001:Zentral-Kommission für die Rheinschiffahrt / Geschichte
+710.002:Rhein / Binnenschiffahrt
+710.003:Deutschland / Zivilprozessrecht
+710.004:Gerichtsverfassung
+710.005:Schiffahrtsrecht
+999:
+
+000:2647
+001:000002647
+002:06.03.1990
+003:29.10.2002
+005.001:90-804
+014:s 15 Ordner 1/8
+015:dt
+027:V
+031.001:90-0001106
+040.001:SRZ46
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%222647%22
+098:aut-8-p
+099:49-00
+100.001:Glaubrecht, Karl
+331:Die Theilung des Eigenthums in Ober- und Nutz-Eigenthum, das kräftigste Hei
+lmittel gegen Communismus und Proletariat im österreichischen Kaiserstaate
+335.001:Zur Beachtung bei gegenwärtiger Neugestaltung der agrarischen und rechtl
+ichen Verhältnisse
+359:Vom ... Justiziär Glaubrecht
+413.001:Prag
+414.001:Rohlicek
+425:1849
+433:24 S.
+575:ad19a
+710.001:sterreich / Eigentum / Teilung / Kommunismus
+999:
+
+000:3134
+001:000003134
+002:19.03.1990
+003:29.10.2002
+005.001:90-1032
+014:Sz 15 Fk 30
+015:fr
+027:V
+031.001:90-0001588
+040.001:SRZ44
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%223134%22
+098:konv-10
+099:13-96
+100.001:Bridel, Louis
+331:A propos du droit matrimonial suisse
+335.001:A messieurs les membres de la Societe des juristes, reunion de Bule, sep
+tembre 1894
+359:Par Louis Bridel
+413.001:Lausanne
+414.001:Bridel
+425:[ca.1894]
+433:54 S.
+575:ad19b
+710.001:Schweiz / Bürgerliches Recht
+710.002:Eherecht
+710.003:Rechtsvereinheitlichung
+710.004:Rechtsreform
+999:
+
+000:3168
+001:000003168
+002:19.03.1990
+003:29.10.2002
+005.001:90-1155
+014:Sz 15 Dk 53
+015:dt
+027:V
+031.001:90-0001792
+040.001:SRZ44
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%223168%22
+098:konv-10
+099:44-96
+100.001:Heuberger, Jakob
+331:Die zeitlichen Grenzen der Wirksamkeit des schweizerischen Obligationenrech
+ts und des Gesetzes über die persönliche Handlungsfähigkeit
+359:Von J. Heuberger
+413.001:Brugg
+414.001:Fisch Wild & Cie.
+425:1885
+433:VIII, 128 S.
+575:ad19b
+710.001:Schweiz / Bürgerliches Recht
+710.002:Handelsrecht
+710.003:Wirtschaftsrecht
+710.004:Obligationenrecht
+710.005:Handlungsfähigkeit
+710.006:äbergangsrecht
+999:
+
+000:3194
+001:000003194
+002:19.03.1990
+003:29.10.2002
+005.001:90-1083
+014:Sz 15 Ek 56
+015:dt
+027:V
+031.001:90-0001648
+040.001:SRZ67
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%223194%22
+098:aut-2
+099:16-98
+100.001:Meiß, Gottfried von
+331:Das Pfand-Recht und der Pfand- oder Betreibungs-Proceß in seinem ganzen Umf
+ang
+335.001:Nach den Gesetzen und der Uebung des Eidgen. Cantons Zürich
+359:Ein civilrechtlicher Versuch von Gottfried von Meiß
+410.001:Zürich
+412.001:Orell, Füßli
+425:1821
+433:XXX, 339 S.
+575:ad19a
+710.001:Zürich <Kanton> / Bürgerliches Recht
+710.002:Zivilprozessrecht
+710.003:Pfandrecht
+999:
+
+000:3281
+001:000003281
+002:20.03.1990
+003:29.10.2002
+005.001:90-1113
+014:Sz 15 Ek 29
+015:dt
+027:V
+031.001:90-0001737
+040.001:SRZ44 (sauer)
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%223281%22
+098:konv-10
+099:19-97
+100.001:Schweizer, Alexander
+331:Die modernen Baubeschränkungen mit besonderer Berücksichtigung der schweize
+rischen Rechtsquellen
+359:Alexander Schweizer
+413.001:Zürich
+414.001:Zürcher & Furrer
+425:1896
+433:VI, 143 S.
+519:Bern, Univ., Diss., 1896
+575:ad19b
+577:Hochschulschrift
+710.001:Schweiz / Verwaltungsrecht
+710.002:Bauordnungsrecht
+710.003:Baufreiheit
+999:
+
+000:3300
+001:000003300
+002:20.03.1990
+003:29.10.2002
+005.001:90-1116
+014:Sz 15 Ak 22
+015:fr
+027:V
+031.001:90-0001756
+040.001:SRZ44
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%223300%22
+098:konv-17
+099:15-97
+100.001:Secretan, Charles
+331:Remarques sur le Code civil du Canton de Vaud
+359:Par Charles Secretan
+410.001:Lausanne
+412.001:Ducloux
+425:1840
+433:XV, 592, 4 S.
+575:ad19a
+710.001:Vaud / Zivilgesetzbuch
+999:
+
+000:3362
+001:000003362
+002:20.03.1990
+003:29.10.2002
+005.001:90-1134
+014:Sz 19 Gk 13
+015:dt
+027:V
+031.001:90-0001818
+040.001:SRZ45 (sauer)
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%223362%22
+098:konv-10
+099:27-97
+100.001:Weber, Leo
+331:Zur Kritik über das Schuldbetreibungs- und Konkursgesetz
+335.001:Bemerkungen zu Prof. Dr. A. Zeerleder's systematisch-kritischer Darstell
+ung des Gesetzes
+359:Von Leo Weber
+413.001:Bern
+414.001:Haller
+425:1889
+433:43 S.
+575:ad19b
+710.001:Schweiz / Zivilprozessrecht
+710.002:Zwangsvollstreckung
+710.003:Konkurs
+710.004:Justizkritik
+999:
+
+000:3381
+001:000003381
+002:20.03.1990
+003:29.10.2002
+005.001:90-1141
+014:Sz 13 k 7 Q
+015:dt
+027:V
+031.001:90-0001837
+040.001:SRZ51 (sauer)
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%223381%22
+098:konv-10
+099:29-97
+100.001:Wolf, G.
+331:Rechtswirrwarr und Rechtseinheit oder Das jetzige und das zukünftige schweiz
+erische Recht
+335.001:Darstellung der Grundzüge des Zivil- und Strafrechts, des Zivil- und Str
+afprozesses der schweizerischen Kantone nebst Vorschlägen und Motiven für die Ve
+reinheitlichung dieser Gebiete
+359:Von G. Wolf
+410.001:Zürich
+412.001:Selbstverl.
+425:1892
+433:XII, 386 S.
+575:ad19b
+710.001:Schweiz / Rechtseinheit
+999:
+
+000:3562
+001:000003562
+002:26.03.1990
+003:29.10.2002
+005.001:90-1175
+014:Dt 15 Ck 149
+015:dt
+027:V
+031.001:90-0002015
+040.001:SRZ13
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%223562%22
+098:konv-10
+099:12-96
+100.001:Buhl, Ludwig
+331:Die Herrschaft des Geburts- und Bodenprivilegiums in Preussen
+359:Von L. Buhl
+410.001:Mannheim
+412.001:L. Buhl
+425:1844
+433:VIII, 316 S.
+575:ad19a
+710.001:Preussen <Königreich> / Agrarverfassung
+710.002:Bauernbefreiung
+710.003:Ablösungsgesetzgebung
+710.004:Gutsherrschaft
+710.005:Adel / Privileg
+710.006:Deutschland / Partikularrecht
+999:
+
+000:4045
+001:000004045
+002:18.04.1990
+003:29.10.2002
+005.001:90-1848
+014:Dt 15 Dk 396
+015:dt
+027:V
+031.001:90-0002500
+040.001:SRZ15
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224045%22
+098:konv-10
+099:35-96
+100.001:Fischer, Otto
+331:Soll Kauf Pacht und Miethe brechen ?
+335.001:Ein Gutachten, dem Deutschen Juristentag erstattet
+335.002:Zugleich ein Beitrag zur Geschichte und Dogmatik von Pacht und Miethe
+359:Von Otto Fischer
+410.001:Berlin [u.a.]
+412.001:Guttentag
+425:1888
+433:138 S.
+575:ad19b
+710.001:Deutschland / Bürgerliches Recht
+710.002:Deutschland / Bürgerliches Gesetzbuch / Gesetzentwurf
+710.003:Kauf bricht nicht Miete
+710.004:Miete
+710.005:Pacht
+710.006:Mieterschutz
+710.007:Rechtsnachfolge
+710.008:Subjektives Recht
+999:
+
+000:4069
+001:000004069
+002:19.04.1990
+003:29.10.2002
+005.001:90-1870
+014:Dt 15 Ordner 2/34
+015:dt
+027:S
+031.001:90-0002524
+040.001:SRZ46
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224069%22
+098:konv-17
+099:22-97
+102.001:Ulrici, Franz
+331:Das Verfahren bei Außer- und Wiederincourssetzung der auf jeden Inhaber lau
+tenden Papiere
+359:Hrsg. von Franz Ulrici
+410.001:Frankfurt a/O.
+412.001:Harnecker
+425:1856
+433:29 S.
+575:ad19b
+710.001:Preussen <Königreich> / Inhaberpapier / Ausserkurssetzung
+999:
+
+000:4077
+001:000004077
+002:19.04.1990
+003:29.10.2002
+005.001:90-2283
+014:Dt 15 Dk 401
+015:dt
+027:V
+031.001:90-0002532
+040.001:SRZ15
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224077%22
+098:konv-10
+099:47-96
+100.001:Kermes, Leopold August
+331:Praktisches Handbuch zum Gebrauch bey Ritterguths-Käufen und Pachtungen für \
+Gelehrte und Ungelehrte
+359:Von L. A. Kermes
+410.001:Leipzig
+412.001:Richter
+425:1802
+433:XIV, 432 S.
+575:ad19a
+710.001:Deutschland / Gemeines Recht
+710.002:Rittergut
+710.003:Grundstückskauf
+999:
+
+000:4087
+001:000004087
+002:20.04.1990
+003:29.10.2002
+005.001:90-1655
+014:Dt 19 Ck 48
+015:dt
+027:V
+031.001:90-0002541
+040.001:SRZ29
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224087%22
+098:konv-10
+099:26-97
+100.001:Weigel, Gottlob
+331:Die Zuständigkeitsgrenzen zwischen den Militär- und Zivilstrafgerichten in \
+Bayern
+359:Von G. Weigel
+410.001:München
+412.001:Beck
+425:1893
+433:VII, 118 S.
+575:ad19b
+710.001:Bayern <Königreich> / Militärgerichtsbarkeit / Strafgerichtsbarkeit / Zu
+ständigkeit
+999:
+
+000:4269
+001:000004269
+002:02.05.1990
+003:29.10.2002
+005.001:90-1689
+014:Dt 19 Hk 23
+015:dt
+027:V
+031.001:90-0002716
+040.001:SRZ34
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224269%22
+098:konv-11
+099:01-96
+100.001:Bahlmann, Wilhelm
+331:Das preußische Grundbuchrecht
+335.001:Die Gesetze vom 5.5.1872 betreffend: 1. den Eigenthumserwerb und die din
+gliche Belastung der Grundstücke, Bergwerke u. selbständigen Gerechtigkeiten; ..
+. 4. die Stempelabgaben von gewissen bei dem Grundbuchamt anzubringenden Anträge
+n
+335.002:Mit e. ausführlichen Komm. in Anm. nebst den in Kraft gebliebenen ergänz
+enden Gesetzen, sowie Tab. zur Berechnung der Kosten und Stempel ...
+359:Hrsg. von W. Bahlmann
+403:2., verb. Ausg.
+410.001:Berlin
+412.001:Vahlen
+425:1872
+433:VI, 514 S.
+575:ad19b
+710.001:Preussen <Königreich> / Zivilprozessrecht
+710.002:Freiwillige Gerichtsbarkeit
+710.003:Grundstücksverkehr
+710.004:Grundbuch
+999:
+
+000:4291
+001:000004291
+002:03.05.1990
+003:29.10.2002
+005.001:90-1698
+014:Dt 15 Bk 41
+015:dt
+027:V
+031.001:90-0002739
+040.001:SRZ11
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224291%22
+098:konv-10
+099:28-96
+100.001:Danz, Erich
+331:Die Auslegung der Rechtsgeschäfte
+335.001:Zugleich ein Beitrag zur Rechts- und Thatfrage
+359:Von Erich Danz
+410.001:Jena
+412.001:Fischer
+425:1897
+433:215 S.
+575:ad19b
+710.001:Deutschland / Gemeines Recht
+710.002:Rechtsgeschäft
+710.003:Auslegung
+999:
+
+000:4296
+001:000004296
+002:03.05.1990
+003:29.10.2002
+005.001:90-1701
+014:Dt 15 Ck 152
+015:dt
+027:V
+031.001:90-0002744
+040.001:SRZ13
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224296%22
+098:konv-10
+099:33-96
+100.001:Endemann, Wilhelm
+331:Die Bedeutung der Wucherlehre
+335.001:Ein Vortrag, gehalten im Wiss. Verein zu Berlin
+359:Von W. Endemann
+410.001:Berlin
+412.001:Steinthal
+425:1866
+433:56 S.
+575:ad19b
+710.001:Preussen <Königreich> / Vertragszins
+710.002:Rechtspolitik
+710.003:Deutschland / Partikularrecht
+710.004:Wucher
+999:
+
+000:4303
+001:000004303
+002:03.05.1990
+003:29.10.2002
+005.001:90-1708
+014:Dt 15 Pk 41
+015:dt
+027:V
+031.001:90-0002751
+040.001:SRZ62
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224303%22
+098:konv-10
+099:38-96
+100.001:Gareis, Karl
+331:Die Klagbarkeit der Differenzgeschäfte
+359:Von Carl Gareis
+410.001:Berlin [u.a.]
+412.001:Guttentag
+425:1882
+433:39 S.
+575:ad19b
+710.001:Deutschland / Gemeines Recht
+710.002:Differenzgeschäft
+710.003:Spieleinwand
+710.004:Nichtigkeit
+710.005:Börse
+999:
+
+000:4311
+001:000004311
+002:03.05.1990
+003:29.10.2002
+005.001:90-1713
+014:Dt 15 Ik 175
+015:dt
+027:V
+031.001:90-0002759
+040.001:SRZ65
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224311%22
+098:konv-10
+099:43-96
+100.001:Hautle, Albert
+331:Der Gläubigerschutz im Aktienrechte
+359:Von Albert Hautle
+410.001:Berlin
+412.001:Puttkammer & Mühlbrecht
+425:1907
+433:251 S.
+575:ad20
+710.001:Deutschland / Gläubigerschutz / Aktienrecht
+999:
+
+000:4318
+001:000004318
+002:03.05.1990
+003:29.10.2002
+005.001:90-1718
+014:Dt 15 Ek 435
+015:dt
+027:V
+031.001:90-0002766
+040.001:SRZ60
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224318%22
+098:konv-16
+099:47-96
+100.001:Hörig, Rudolf
+331:Rauch, Ruß, Geräusch und ähnliche Einwirkungen im § 906 des Bürgerlichen Ges
+etzbuches und die zivilrechtlichen Ansprüche gegen sie
+359:Von Rudolf Hörig
+410.001:Leipzig
+412.001:Veit
+425:1906
+433:X, 90 S.
+519:Zugl.: Leipzig, Univ., Diss., 1906 u.d.T.: Die Einwirkungen auf ein Grundstü
+ck im Sinne des § 906 BGB, die gegen sie begründeten zivilrechtlichen Ansprüche \
+und deren Durchführung im Prozeß
+575:ad20
+710.001:Sachenrecht
+710.002:Grundstücksrecht
+999:
+
+000:4321
+001:000004321
+002:03.05.1990
+003:29.10.2002
+005.001:90-1720
+014:Dt 15 Dk 398
+015:dt
+027:V
+031.001:90-0002769
+040.001:SRZ15
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224321%22
+098:konv-10
+099:46-96
+100.001:Jünger, Heinrich
+331:Bricht Kauf die Miete im Bezirk des Oberlandesgerichts zu Frankfurt a. Main?
+335.001:Nach heutigem Recht und nach dem deutschen Bürgerlichen Gesetzbuch
+359:Bearb. von H. Jünger
+410.001:Wiesbaden
+412.001:Bechtold
+425:1897
+433:IV, 50 S.
+575:ad19b
+710.001:Deutschland / Gemeines Recht
+710.002:Deutschland / Bürgerliches Recht
+710.003:Deutschland / Bürgerliches Gesetzbuch
+710.004:Kauf bricht nicht Miete
+710.005:Miete / Mieterschutz
+710.006:Rechtsnachfolge
+710.007:Subjektives Recht
+710.008:Frankfurt <Main>
+999:
+
+000:4331
+001:000004331
+002:03.05.1990
+003:29.10.2002
+005.001:90-1726
+014:Dt 15 Ek 430
+015:dt
+027:V
+031.001:90-0002779
+040.001:SRZ61
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224331%22
+098:konv-17
+099:07-97
+100.001:Lette, Adolph
+331:Die Gesetzgebung über Benutzung der Privatflüsse zur Bewässerung von Grunds
+tücken
+359:Von Lette
+410.001:Berlin
+412.001:Wiegandt
+425:1850
+433:IV, 88 S.
+575:ad19b
+710.001:Preussen <Königreich> / Bürgerliches Recht
+710.002:Wasserrecht
+710.003:Bewässerung
+999:
+
+000:4333
+001:000004333
+002:03.05.1990
+003:29.10.2002
+005.001:90-1728
+014:s 19 Ek 33
+015:dt
+027:V
+031.001:90-0002781
+040.001:SRZ43
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224333%22
+098:konv-10
+099:51-96
+100.001:Lindheim, Alfred von
+331:Das Schiedsgericht im modernen Civilprocesse
+359:Von Alfred von Lindheim
+410.001:Wien
+412.001:Manz
+425:1891
+433:167 S.
+575:ad19b
+710.001:sterreich / Zivilprozessrecht
+710.002:Schiedsgericht
+999:
+
+000:4338
+001:000004338
+002:03.05.1990
+003:29.10.2002
+005.001:90-1732
+014:Dt 19 Ek 173
+015:dt
+027:S
+031.001:90-0002786
+040.001:SRZ34
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224338%22
+098:konv-17
+099:04-97
+102.001:Meyer, Hermann
+331:Anleitung zur Prozeßpraxis nach der Civilprozeßordnung vom 30. Januar 1877 i
+n Beispielen an Rechtsfällen
+359:Hrsg. von Hermann Meyer
+410.001:Berlin
+412.001:Vahlen
+425:1879
+433:XVI, 332 S.
+575:ad19b
+710.001:Deutschland / Zivilprozessrecht
+710.002:Rechtsfall
+999:
+
+000:4342
+001:000004342
+002:03.05.1990
+003:29.10.2002
+004.001:70121
+005.001:90-1767
+014:Dt 15 Ak 208 <2> [6]
+015:dt
+024.001:1060
+027:V
+031.001:90-0002790
+040.001:SRZ65
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224342%22
+098:konv-16-8
+099:12-97
+100.001:Niedner, Alexander
+331:Das Einführungsgesetz vom 18. August 1896
+359:Erl. von A. Niedner
+403:2., unter Berücksichtigung der ausführungsgesetze sämmtlicher Bundesstaaten \
+umgearb. und verm. Aufl.
+410.001:Berlin
+412.001:Heymann
+425:1901
+433:XXXII, 500 S.
+451.001:Kommentar zum Bürgerlichen Gesetzbuche und seinen Nebengesetzen : 1, Kom
+mentar zum Bürgerlichen Gesetzbuche ; 6, Einführungsgesetz
+575:ad20
+577:Kommentar
+710.001:Deutschland / Einführungsgesetz zum Bürgerlichen Gesetzbuche
+999:
+
+000:4351
+001:000004351
+002:03.05.1990
+003:29.10.2002
+005.001:90-1741
+014:Dt 15 Ordner 2/36
+015:dt
+027:V
+031.001:90-0002799
+040.001:SRZ46
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224351%22
+098:konv-10
+099:12-97
+100.001:Reuling, Wilhelm
+331:Die wahre rechtliche Natur der vermeintlichen "Kompensationseinrede"
+335.001:Eine kritische Studie
+359:Von W. Reuling
+413.001:Berlin
+414.001:Gronau
+425:1899
+433:31 S.
+575:ad19b
+710.001:Deutschland / Aufrechnung / Einwendung
+999:
+
+000:4382
+001:000004382
+002:04.05.1990
+003:29.10.2002
+005.001:90-1762
+014:Dt 15 Ak 284
+015:dt
+027:S
+031.001:90-0002830
+040.001:SRZ59
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224382%22
+098:konv-10-3
+099:29-97
+102.001:Wolf, Benno
+102.002:Neukirch, Carl
+331:Das Bürgerliche Gesetzbuch unter Berücksichtigung der gesamten Rechtsprechu
+ng der oberen Gerichte des Deutschen Reichs
+335.001:Hand-Kommentar
+359:In Verb. mit C. Neukirch [u.a.] hrsg. von B. Wolf
+410.001:Halle a.S.
+412.001:Buchh. des Waisenhauses
+425:1908
+433:XIII, 653 S.
+575:ad20
+577:Kommentar
+710.001:Deutschland / Bürgerliches Gesetzbuch
+999:
+
+000:4474
+001:000004474
+002:07.05.1990
+003:29.10.2002
+005.001:90-1981
+014:Dt 15 Ak 288
+015:dt
+027:V
+031.001:90-0002924
+040.001:SRZ55
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224474%22
+098:konv-10
+099:47-96
+100.001:Korn, Alfred
+331:Handbuch des Zivilrechts mit Einschluß des Handels- und Wechselrechts
+359:Von Alfred Korn
+410.001:Berlin
+412.001:Vahlen
+425:1908
+433:XXIV, 734 S.
+575:ad20
+577:Lehrbuch
+710.001:Deutschland / Privatrecht
+999:
+
+000:4495
+001:000004495
+002:07.05.1990
+003:29.10.2002
+005.001:90-1990
+014:Dt 15 Gk 187
+015:dt
+027:V
+031.001:90-0002945
+040.001:SRZ27
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224495%22
+098:konv-17
+099:19-97
+100.001:Strohal, Emil
+331:Das Pflichtteilsrecht der entfernteren Abkömmlinge und der Eltern des Erbla
+ssers nach dem deutschen Bürgerlichen Gesetzbuche
+359:Dekanats-Programm von Emil Strohal
+413.001:Leipzig
+414.001:Edelmann
+425:1899
+433:51 S.
+535:Ex 01
+575:ad19b
+710.001:Deutschland / Bürgerliches Recht
+710.002:Pflichtteilsrecht
+999:
+
+000:4496
+001:000004496
+002:07.05.1990
+003:29.10.2002
+004.001:158003
+005.001:90-1960
+014:Dt 15 Hk 101 [Neue Sammlung,3]
+015:dt
+024.001:20030
+027:U
+028:B
+031.001:90-0002946
+040.001:SRZ66
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224496%22
+089.001:Neue Sammlung, 3
+098:konv-13
+099:39-96
+200.001:Kaufmannschaft <Berlin>
+331:Gutachten der Ältesten der Kaufmannschaft von Berlin über Gebräuche im Hande
+lsverkehr
+371.001:[2. Nachtrag]
+425:1914
+575:ad20
+577:BdSatz
+999:
+
+000:4586
+001:000004586
+002:11.05.1990
+003:29.10.2002
+005.001:90-2019
+014:Dt 15 Dk 402
+015:dt
+027:V
+031.001:90-0003035
+040.001:SRZ66; angebunden sind 40 S. ohne Titelblatt, die nicht identifizierbar \
+sind
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224586%22
+098:konv-10-2
+099:07-97
+100.001:Münter, Johann Carl Ernst
+331:Das Roßtauscher-Recht
+359:Von J. C. E. Münter
+403:3., verb. u. durch das westphälische Recht verm. Aufl.
+410.001:Hannover
+412.001:Hahn
+425:1810
+433:288 S.
+575:ad19a
+710.001:Deutschland / Gemeines Recht
+710.002:Französisches Recht
+710.003:Viehkauf
+710.004:Tausch
+710.005:Sachmängelhaftung
+710.006:Pferdehandel
+999:
+
+000:4658
+001:000004658
+002:18.05.1990
+003:29.10.2002
+005.001:90-2091
+014:Dt 15 Ordner 2/28
+015:dt
+027:V
+031.001:90-0003100
+040.001:SRZ60
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%224658%22
+098:konv-10
+099:15-97
+100.001:Schmoller, Gustav von
+331:äber Organe für Einigung und Schiedssprüche in Arbeitsstreitigkeiten
+359:Von Gustav Schmoller
+410.001:Berlin
+425:1903
+433:12 S.
+451.001:Sitzungsberichte der Königlich Preussischen Akademie der Wissenschaften \
+: Phil.-hist. Classe ; 1903, 5
+575:ad20
+710.001:Arbeitsgerichtsbarkeit
+999:
+
+000:5090
+001:000005090
+002:13.06.1990
+003:29.10.2002
+005.001:90-2199
+014:s 15 Mk 25
+015:dt
+027:V
+031.001:90-0003523
+040.001:SRZ39
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%225090%22
+080.001:Kopie
+098:konv-10
+099:14-97
+100.001:Schmid, Ferdinand
+331:Wirksamkeit der Gewerkgerichte und ihre Fortbildung
+359:Von Ferdinand Schmid
+410.001:Wien
+412.001:Hölder
+425:1889
+433:44 S.
+501.001:Aus: Statistische Monatsschrift ; 15
+575:ad19bK
+578:Xerokopie
+710.001:sterreich / Handelsgerichtsbarkeit
+710.002:Wirtschaftsrecht
+710.003:Arbeitsrecht
+710.004:Gewerbegericht
+710.005:Rechtsvergleich
+710.006:Rechtsreform
+999:
+
+000:5101
+001:000005101
+002:13.06.1990
+003:29.10.2002
+005.001:90-2433
+014:s 19 Ek 34
+015:dt
+027:V
+031.001:90-0003534
+040.001:SRZ43
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%225101%22
+098:konv-17
+099:48-96
+100.001:Kunz, Carl Joseph
+331:Lehre vom Ersatz und Compensation der Kosten
+359:Frey bearb. nach einer ähnlichen Abh. des ... A. D. Weber durch Carl Joseph \
+Kunz
+410.001:Wien
+412.001:Sollinger
+425:1828
+433:63 S.
+575:ad19a
+710.001:sterreich / Zivilprozessrecht
+710.002:Bürgerliches Recht
+710.003:sterreich / Allgemeines bürgerliches Gesetzbuch
+710.004:Prozesskosten
+710.005:Kostenerstattung
+999:
+
+000:5250
+001:000005250
+002:27.06.1990
+003:29.10.2002
+005.001:90-2521
+014:Dt 15 Hk 183
+015:fr
+027:V
+031.001:90-0003682
+040.001:SRZ69
+076:http://dlib-pr.mpier.mpg.de/mfer-cgi/kleioc/0010MFER/exec/books/%225250%22
+098:kon-17
+099:10-97
+100.001:Reden, Friedrich Wilhelm von
+102.001:Tourneux, Prosper
+331:Legislation des chemins de fer en Allemagne
+359:Par de Reden. Trad. de l'allemand, avec une introd. et des notes par Prosper
+ Tourneux
+410.001:Paris
+412.001:Mathias
+425:1845
+433:XXXII, 572 S. : Kt.
+575:ad19a
+710.001:Deutschland / Privatrecht
+710.002:Eisenbahnrecht
+999:
