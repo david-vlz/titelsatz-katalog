@@ -2,5 +2,9 @@ TEMPLATE = app
 CONFIG += console
 CONFIG -= qt
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    charbufferlib.cpp
+
+HEADERS += \
+    charbuffer.h
 
