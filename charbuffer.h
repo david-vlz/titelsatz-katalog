@@ -27,7 +27,7 @@ public:
     }
 
 private:
-    char buffer[80];
+    char buffer[81];
     int counter;
 };
 
