@@ -4,11 +4,28 @@
 class ClCharBuffer
 {
 public:
-    ClCharBuffer() { buffer = "\0"; counter = 0; }
+    ClCharBuffer()
+    {
+        buffer[0] = '\0';
+        counter = 0;
+    }
+
     void push(char c) { buffer[counter++] = c; }
-    char pop() { return buffer[counter--]; }
-    void reset() { buffer[counter] = '\0'; counter = 0; }
-    char *getString() { reset(); return buffer; }
+
+    char pop() { return buffer[--counter]; }
+
+    void reset()
+    {
+        buffer[0] = '\0';
+        counter = 0;
+    }
+
+    char *getString()
+    {
+        buffer[counter] = '\0';
+        return buffer;
+    }
+
 private:
     char buffer[80];
     int counter;

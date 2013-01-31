@@ -4,7 +4,8 @@ using namespace std;
 
 #include <fstream>
 #include <string.h>
-#include <ios>
+
+#include "charbuffer.h"
 
 
 void read(ifstream& file);
@@ -15,13 +16,23 @@ enum categoryStatus { number, info, end };
 
 int main()
 {
-    ifstream file;
-    file.open("test-data-2.txt");
-    if (!file) {
-        cout << "Keine Datei mit diesem Namen vorhanden." << endl;
-    }
-    read(file);
-    file.close();
+//    ifstream file;
+//    file.open("test-data-2.txt");
+//    if (!file) {
+//        cout << "Keine Datei mit diesem Namen vorhanden." << endl;
+//    }
+//    read(file);
+//    file.close();
+
+    ClCharBuffer *buffer;
+    buffer = new ClCharBuffer;
+    buffer->push('a');
+    buffer->push('c');
+    cout << buffer->getString() << endl;
+    buffer->push('e');
+    buffer->push('g');
+    buffer->pop();
+    cout << buffer->getString() << endl;
 
     return 0;
 }
