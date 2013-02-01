@@ -4,13 +4,9 @@
 class ClCharBuffer
 {
 public:
-    ClCharBuffer()
-    {
-        buffer[0] = '\0';
-        counter = 0;
-    }
+    ClCharBuffer(int initSize);
 
-    void push(char c) { buffer[counter++] = c; }
+    void push(char c);
 
     char pop() { return buffer[--counter]; }
 
@@ -27,8 +23,9 @@ public:
     }
 
 private:
-    char buffer[81];
+    char *buffer;
     int counter;
+    int maxSize;
 };
 
 #endif // CHARBUFFER_H
