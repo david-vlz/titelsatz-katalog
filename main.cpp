@@ -26,10 +26,23 @@ int main()
 //    file.close();
 
     ClCategory *cat = new ClCategory;
-    cat->setValue("abc");
+    cat->setNumber(23);
+    cat->addValue("abc");
     cout << cat->getValue() << endl;
     cat->setValue("def");
     cout << cat->getValue() << endl;
+    char *c = new char[3];
+    strcpy(c, "ghi");
+    cat->addValue(c);
+    cat->addValue("gnlpft");
+    cat->addValue("gnlpft");
+    cat->addValue("gnlpft");
+    cat->addValue("gnlepft");
+    cat->addValue("gn88888lpft");
+    cat->addValue("gnlpr23434ft");
+    cat->addValue("gn1111lpft");
+    cout << "-----" << endl;
+    cat->print();
 
     return 0;
 }
