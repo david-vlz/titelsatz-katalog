@@ -5,6 +5,7 @@ class ClCategory
 {
 public:
     ClCategory();
+    ClCategory(int initNumber);
 
     void setNumber(int i) { number = i; }
     int getNumber() { return number; }

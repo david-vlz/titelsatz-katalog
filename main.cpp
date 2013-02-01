@@ -43,6 +43,12 @@ int main()
     cat->addValue("gn1111lpft");
     cout << "-----" << endl;
     cat->print();
+    ClCategory *cat_zwo = new ClCategory(14);
+    cat->setNext(cat_zwo);
+    cat->getNext()->setValue("bvfgh");
+    cat_zwo->addValue("3333");
+    cout << "-----" << endl;
+    cat_zwo->print();
 
     return 0;
 }

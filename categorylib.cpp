@@ -15,6 +15,17 @@ ClCategory::ClCategory()
     next = NULL;
 }
 
+ClCategory::ClCategory(int initNumber)
+{
+    number = initNumber;
+    partNumber = -1;
+    values = NULL;
+    valueCount = 0;
+    maxValues = 1;
+    multipleValuesPossible = false;
+    next = NULL;
+}
+
 void ClCategory::setValue(char *value)
 {
     if (valueCount == 0) {
@@ -32,7 +43,6 @@ void ClCategory::addValue(char *value)
         setValue(value);
     } else {
         allocValueSpace(1);
-        cout << "vc: " << valueCount << endl;
         values[valueCount++] = value;
     }
 }
@@ -41,27 +51,27 @@ void ClCategory::allocValueSpace(int size)
 {
     while ((valueCount + size) > maxValues) {
         maxValues *= 2;
-        char **newValues = new char*[maxValues];
-        for (int i = 0; i < valueCount; i++) {
-            newValues[i] = values[i];
-        }
-        delete values;
-        values = newValues;
     }
+    char **newValues = new char*[maxValues];
+    for (int i = 0; i < valueCount; i++) {
+        newValues[i] = values[i];
+    }
+    delete values;
+    values = newValues;
 }
 
 void ClCategory::print()
 {
     if (multipleValuesPossible) {
         for (int i = 0; i < valueCount; i++) {
-//            cout << number << "." << i+1 << ":" << values[i] << endl;
             printAsTriple(number);
             cout << '.';
             printAsTriple(i+1);
             cout << ':' << values[i] << endl;
         }
     } else {
-        cout << number << ":" << values[0] << endl;
+        printAsTriple(number);
+        cout << ':' << values[0] << endl;
     }
 }
 
