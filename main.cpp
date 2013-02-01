@@ -12,7 +12,7 @@ void read(ifstream& file);
 bool isAtCategoryLineStart(ifstream &file);
 
 enum datasetStatus { inside, outside };
-enum categoryStatus { number, subnumber, info };
+enum categoryStatus { number, numberpart, info };
 
 int main()
 {
@@ -44,10 +44,9 @@ void read(ifstream& file)
 
             // Datensatzbeginn erkennen
             if (datasetStatus == outside) {
-
                 if (!strcmp(buffer->getString(), "000")) {
                     datasetStatus = inside;
-                    cout << "------ Beginn Datensatz ------" << endl;
+                    cout << "====== Beginn Datensatz ======" << endl;
                 }
             }
 
@@ -64,10 +63,10 @@ void read(ifstream& file)
                 if (!strcmp(buffer->getString(), "999")) {
                     datasetStatus = outside;
                     categoryStatus = number;
-                    cout << "------ Ende Datensatz ------" << endl;
+                    cout << "====== Ende Datensatz ======" << endl;
                 }
                 // Erweiterung einer Kategorienummer
-                else if (categoryStatus == subnumber) {
+                else if (categoryStatus == numberpart) {
                     categoryStatus = info;
                     cout << "UntNr.: '" << buffer->getString() << '\'' << endl;
                 }
@@ -80,11 +79,20 @@ void read(ifstream& file)
             buffer->reset();
             break;
 
-        case '\n':
+        case '.':
+            if (categoryStatus == number) {
+                categoryStatus = numberpart;
+                cout << "KatNr.: \'" << buffer->getString() << '\'' << endl;
+                buffer->reset();
+            } else {
+                buffer->push(symbol);
+            }
+            break;
 
-            // TODO:Auf fehlerhafte Eingaben zwischen Datensätzen prüfen
+        case '\n':
             if (datasetStatus == outside) {
                 buffer->reset();
+                 // TODO: Hier auf fehlerhafte Eingaben zwischen Datensätzen prüfen
                 break;
             }
 
@@ -92,9 +100,8 @@ void read(ifstream& file)
             if (categoryStatus == info) {
                 // Status der neuen Zeile prüfen
                 if (isAtCategoryLineStart(file)) {
-
                     cout << "Inhalt: " << '\'' << buffer->getString() << '\'' << endl;
-
+                    cout << "-------" << endl;
                     categoryStatus = number;
                     buffer->reset();
                 } else {
@@ -126,16 +133,16 @@ bool isAtCategoryLineStart(ifstream& file)
     bool result = true;
     char symbol;
     int count;
-    char word[3];
+    char linestart[3];
     for (file.get(symbol), count = 0; count < 3; count++, file.get(symbol)) {
-        word[count] = symbol;
-        if (!std::isdigit(symbol)) {
+        linestart[count] = symbol;
+        if (!isdigit(symbol)) {
             result = false;
             break;
         }
     }
     for (count -= 1, file.putback(symbol); count >= 0; count--) {
-        file.putback(word[count]);
+        file.putback(linestart[count]);
     }
     return result;
 }
