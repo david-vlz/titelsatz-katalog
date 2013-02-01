@@ -3,8 +3,11 @@ CONFIG += console
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    charbufferlib.cpp
+    charbufferlib.cpp \
+    categorylib.cpp
 
 HEADERS += \
-    charbuffer.h
+    charbuffer.h \
+    dataset.h \
+    category.h
 

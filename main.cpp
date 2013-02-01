@@ -6,23 +6,30 @@ using namespace std;
 #include <string.h>
 
 #include "charbuffer.h"
+#include "category.h"
 
 
 void read(ifstream& file);
 bool isAtCategoryLineStart(ifstream &file);
 
 enum datasetStatus { inside, outside };
-enum categoryStatus { number, numberpart, info };
+enum categoryStatus { number, partNumber, value };
 
 int main()
 {
-    ifstream file;
-    file.open("test-data-2.txt");
-    if (!file) {
-        cout << "Keine Datei mit diesem Namen vorhanden." << endl;
-    }
-    read(file);
-    file.close();
+//    ifstream file;
+//    file.open("test-data-2.txt");
+//    if (!file) {
+//        cout << "Keine Datei mit diesem Namen vorhanden." << endl;
+//    }
+//    read(file);
+//    file.close();
+
+    ClCategory *cat = new ClCategory;
+    cat->setValue("abc");
+    cout << cat->getValue() << endl;
+    cat->setValue("def");
+    cout << cat->getValue() << endl;
 
     return 0;
 }
@@ -43,15 +50,13 @@ void read(ifstream& file)
         case ':':
 
             // Datensatzbeginn erkennen
-            if (datasetStatus == outside) {
-                if (!strcmp(buffer->getString(), "000")) {
-                    datasetStatus = inside;
-                    cout << "====== Beginn Datensatz ======" << endl;
-                }
+            if ((datasetStatus == outside) && (!strcmp(buffer->getString(), "000"))) {
+                datasetStatus = inside;
+                cout << "====== Beginn Datensatz ======" << endl;
             }
 
             // Nichts unternehmen, wenn keine Kategorienummer erwartetet wird
-            if (categoryStatus == info) {
+            if (categoryStatus == value) {
                 buffer->push(symbol);
                 break;
             }
@@ -66,13 +71,13 @@ void read(ifstream& file)
                     cout << "====== Ende Datensatz ======" << endl;
                 }
                 // Erweiterung einer Kategorienummer
-                else if (categoryStatus == numberpart) {
-                    categoryStatus = info;
+                else if (categoryStatus == partNumber) {
+                    categoryStatus = value;
                     cout << "UntNr.: '" << buffer->getString() << '\'' << endl;
                 }
                 // Normale Kategorienummer
                 else {
-                    categoryStatus = info;
+                    categoryStatus = value;
                     cout << "KatNr.: \'" << buffer->getString() << '\'' << endl;
                 }
             }
@@ -81,7 +86,7 @@ void read(ifstream& file)
 
         case '.':
             if (categoryStatus == number) {
-                categoryStatus = numberpart;
+                categoryStatus = partNumber;
                 cout << "KatNr.: \'" << buffer->getString() << '\'' << endl;
                 buffer->reset();
             } else {
@@ -96,8 +101,7 @@ void read(ifstream& file)
                 break;
             }
 
-
-            if (categoryStatus == info) {
+            if (categoryStatus == value) {
                 // Status der neuen Zeile prüfen
                 if (isAtCategoryLineStart(file)) {
                     cout << "Inhalt: " << '\'' << buffer->getString() << '\'' << endl;
@@ -110,9 +114,8 @@ void read(ifstream& file)
                     break;
                 }
             } else {
-                // TODO: Warnung bei Zeilenende nach leerer Kategorie ??
+                // TODO: Warnung bei Zeilenende nach leerer Kategorie, wenn Puffer gefüllt ??
             }
-
             break;
 
 
