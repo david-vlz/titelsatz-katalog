@@ -47,17 +47,21 @@ void ClCategory::addValue(char *value)
     }
 }
 
-void ClCategory::allocValueSpace(int size)
+void ClCategory::allocValueSpace(int sizeToAdd)
 {
-    while ((valueCount + size) > maxValues) {
+    bool needToReallocate = false;
+    while ((valueCount + sizeToAdd) > maxValues) {
         maxValues *= 2;
+        needToReallocate = true;
     }
-    char **newValues = new char*[maxValues];
-    for (int i = 0; i < valueCount; i++) {
-        newValues[i] = values[i];
+    if (needToReallocate) {
+        char **newValues = new char*[maxValues];
+        for (int i = 0; i < valueCount; i++) {
+            newValues[i] = values[i];
+        }
+        delete values;
+        values = newValues;
     }
-    delete values;
-    values = newValues;
 }
 
 void ClCategory::print()

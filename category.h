@@ -30,7 +30,7 @@ private:
     int valueCount;
     int maxValues;
     bool multipleValuesPossible;
-    void allocValueSpace(int size);
+    void allocValueSpace(int sizeToAdd);
 
     ClCategory *next;
 

@@ -19,7 +19,7 @@ enum categoryStatus { number, partNumber, value };
 int main()
 {
     ifstream file;
-    file.open("test-data.txt");
+    file.open("test-data-2.txt");
     if (!file) {
         cout << "Keine Datei mit diesem Namen vorhanden." << endl;
     }
@@ -39,7 +39,8 @@ void read(ifstream& file)
     enum categoryStatus categoryStatus = number;
     bool readingMultiValuedCategory = false;
 
-    char *val;
+    int categoryNumber = 0;
+    char *categoryValue;
 
     ClCategory *first = NULL;
     ClCategory *category = NULL;
@@ -93,10 +94,14 @@ void read(ifstream& file)
 
         case '.':
             // Kategorie initialisieren, wenn neue Kategorienummer erwartet wird
+            // und alte Kategorie nicht die gleiche Nummer trägt
+            categoryNumber = atoi(buffer->getString());
             if (categoryStatus == number) {
-                next = new ClCategory(atoi(buffer->getString()));
-                category->setNext(next);
-                category = category->getNext();
+                if (categoryNumber != category->getNumber()) {
+                    next = new ClCategory(atoi(buffer->getString()));
+                    category->setNext(next);
+                    category = category->getNext();
+                }
                 readingMultiValuedCategory = true;
                 categoryStatus = partNumber;
                 buffer->reset();
@@ -118,23 +123,23 @@ void read(ifstream& file)
                 // Kategoriewert setzen, wenn die Datei nach dem Zeilenumbruch
                 // durch eine Kategorinummer fortgesetzt wird
                 if (isAtCategoryLineStart(file)) {
-                    val = new char[strlen(buffer->getString())+1];
-                    strcpy(val, buffer->getString());
+                    categoryValue = new char[strlen(buffer->getString())+1];
+                    strcpy(categoryValue, buffer->getString());
                     if (readingMultiValuedCategory) {
-                        category->addValue(val);
+                        category->addValue(categoryValue);
                     } else {
-                        category->setValue(val);
+                        category->setValue(categoryValue);
                     }
                     categoryStatus = number;
                     buffer->reset();
                 }
-                // Nichts unternehmen, wenn die Zeile einen Informationsbereich fortsetzt
-                else {
-                    // Buffer wird weiter gefüllt
-                    break;
-                }
-            } else {
-                // TODO: Warnung bei Zeilenende nach leerer Kategorie, wenn Puffer gefüllt ??
+//                // Nichts unternehmen, wenn die Zeile einen Informationsbereich fortsetzt
+//                else {
+//                    // Buffer wird weiter gefüllt
+//                    break;
+//                }
+//            } else {
+//                // TODO: Warnung bei Zeilenende nach leerer Kategorie, wenn Puffer gefüllt ??
             }
             break;
 
