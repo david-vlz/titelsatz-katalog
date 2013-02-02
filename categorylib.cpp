@@ -77,6 +77,10 @@ void ClCategory::print()
 
 void ClCategory::printAsTriple(int i)
 {
+    if (i == 0) {
+        cout << "000";
+        return;
+    }
     for (int j = i; j < 100; j *= 10) {
         cout << '0';
     }
