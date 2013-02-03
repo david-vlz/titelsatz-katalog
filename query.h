@@ -18,7 +18,7 @@ public:
 
     void addQuery(int number, char *value);
 
-    void setConnector(enum connector logicalConnector) { connector = logicalConnector; }
+    void setConnector(enum connector logicalConnector) { logConn = logicalConnector; }
 
     ClDataset **execute();
 
@@ -29,7 +29,7 @@ private:
     ClCategory *firstQuery;
     ClCategory *nextQuery;
     ClCategory *lastQuery;
-    enum connector connector;
+    enum connector logConn;
     ClDataset **results;
     int resultCount;
     int maxResults;

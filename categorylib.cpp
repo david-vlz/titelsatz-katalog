@@ -79,15 +79,24 @@ void ClCategory::allocValueSpace(int sizeToAdd)
 void ClCategory::toStream(ostream &stream)
 {
     if (multipleValuesPossible) {
+        bool firstIteration = true;
         for (int i = 0; i < valueCount; i++) {
-            numberAsTripleToStream(number, stream);
-            stream << '.';
-            numberAsTripleToStream(i+1, stream);
-            stream << ':' << values[i] << endl;
+            if (firstIteration) {
+                numberAsTripleToStream(number, stream);
+                firstIteration = false;
+            }
+            stream << '\t';
+            if (valueCount > 1) {
+                stream << "- ";
+            }
+            valueToStream(values[i], stream);
+            stream << endl;
         }
     } else {
         numberAsTripleToStream(number, stream);
-        stream << ':' << values[0] << endl;
+        stream << '\t';
+        valueToStream(values[0], stream);
+        stream << endl;
     }
 }
 
@@ -101,4 +110,14 @@ void ClCategory::numberAsTripleToStream(int i, ostream &stream)
         stream << '0';
     }
     stream << i;
+}
+
+void ClCategory::valueToStream(char *value, ostream &stream)
+{
+    for (unsigned int i = 0; i < strlen(value); i++) {
+        stream << value[i];
+        if (((i+1) % 75) == 0) {
+            stream << "\n   \t";
+        }
+    }
 }

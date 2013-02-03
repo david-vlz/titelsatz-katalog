@@ -40,7 +40,8 @@ void ClDataset::toStream(ostream &stream)
     for (ClCategory *cat = firstCategory; cat != NULL; cat = cat->getNext()) {
         cat->toStream(stream);
     }
-    stream << "999:" << endl << endl;
+    stream << endl << endl;
+//    stream << "999:" << endl << endl;
 }
 
 void ClDataset::allToStream(ostream &stream)

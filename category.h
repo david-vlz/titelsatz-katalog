@@ -38,8 +38,8 @@ private:
 
     ClCategory *next;
 
-    void printAsTriple(int i);
     void numberAsTripleToStream(int i, ostream &stream);
+    void valueToStream(char *value, ostream &stream);
 };
 
 #endif // CATEGORY_H

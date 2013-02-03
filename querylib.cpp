@@ -14,7 +14,7 @@ ClQuery::ClQuery(ClDataset *data)
     firstQuery = NULL;
     nextQuery = NULL;
     lastQuery = NULL;
-    connector = andConnect;
+    logConn = andConnect;
     results = NULL;
     resultCount = 0;
     maxResults = 4;
@@ -43,29 +43,33 @@ ClDataset** ClQuery::execute()
 
         for (ClCategory *query = firstQuery; query != NULL; query = query->getNext()) {
 
+            allConditionsMet = true;
+
             // Nummer abfragen
             possibleMatch = dataset->findCategory(query->getNumber());
             if (possibleMatch != NULL) {
                 // Text abfragen
                 if (possibleMatch->find(query->getValue()) != NULL) {
-                    if (connector == orConnect) {
+                    if (logConn == orConnect) {
                         addToResults(dataset);
                         break;
                     }
-                } else if (connector == andConnect) {
+                } else if (logConn == andConnect) {
                     allConditionsMet = false;
                     break;
                 }
-            } else if (connector == andConnect) {
+            } else if (logConn == andConnect) {
                 allConditionsMet = false;
                 break;
             }
         }
 
-        if ((connector == andConnect) && allConditionsMet) {
+        if ((logConn == andConnect) && allConditionsMet) {
             addToResults(dataset);
         }
     }
+
+    return results;
 }
 
 
@@ -75,9 +79,9 @@ void ClQuery::toStream(ostream &stream)
     bool firstIteration = true;
     for (ClCategory *query = firstQuery; query != NULL; query = query->getNext()) {
         if (!firstIteration) {
-            if (connector == andConnect) {
+            if (logConn == andConnect) {
                 stream << " UND";
-            } else if (connector == orConnect) {
+            } else if (logConn == orConnect) {
                 stream << " ODER";
             }
             stream << endl;
@@ -94,9 +98,13 @@ void ClQuery::toStream(ostream &stream)
     if (results != NULL) {
         stream << "=== Ergebnisse ===" << endl;
         for (int i = 0; i < resultCount; i++) {
-            stream << "* Ergbnis [" << i+1 << "] *" << endl;
+            stream << "Ergbnis [" << i+1 << "]" << endl;
+//            stream << "Kat.Nr.\tInhalt" << endl;
+            stream << "-----------" << endl;
             results[i]->toStream(stream);
         }
+    } else {
+        stream << "Die Abfrage erbrachte keine Ergebnisse." << endl;
     }
 }
 
@@ -109,7 +117,6 @@ void ClQuery::addToResults(ClDataset *positiveMatch)
     }
     if (resultCount == maxResults) {
         maxResults *= 2;
-        cout << "new max: " << maxResults << endl;
         ClDataset **newResults = new ClDataset*[maxResults];
         for (int i = 0; i < resultCount; i++) {
             newResults[i] = results[i];

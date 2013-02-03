@@ -1,5 +1,5 @@
 #ifndef DATASET_H
-#define DATA
+#define DATASET_H
 
 #include "category.h"
 
