@@ -20,7 +20,7 @@ enum categoryStatus { number, partNumber, value };
 int main()
 {
     ifstream file;
-    file.open("sample.txt");
+    file.open("test2.txt");
     if (!file) {
         cout << "Keine Datei mit diesem Namen vorhanden." << endl;
     }

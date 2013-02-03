@@ -22,7 +22,7 @@ public:
     ClDataset *searchDescendent(int number, char *value);
 
     void print() { toStream(cout); }
-    void printAll();
+    void printAll() { allToStream(cout); }
 
     void toStream(ostream &stream);
     void allToStream(ostream &stream);

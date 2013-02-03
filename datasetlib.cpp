@@ -35,13 +35,6 @@ ClCategory *ClDataset::findCategory(char *value)
     return NULL;
 }
 
-void ClDataset::printAll()
-{
-    for (ClDataset *dataset = this; dataset != NULL; dataset = dataset->getNext()) {
-        dataset->print();
-    }
-}
-
 void ClDataset::toStream(ostream &stream)
 {
     for (ClCategory *cat = firstCategory; cat != NULL; cat = cat->getNext()) {

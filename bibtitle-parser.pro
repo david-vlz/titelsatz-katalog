@@ -5,10 +5,12 @@ CONFIG -= qt
 SOURCES += main.cpp \
     charbufferlib.cpp \
     categorylib.cpp \
-    datasetlib.cpp
+    datasetlib.cpp \
+    querylib.cpp
 
 HEADERS += \
     charbuffer.h \
     dataset.h \
-    category.h
+    category.h \
+    query.h
 
