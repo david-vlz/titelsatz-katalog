@@ -17,10 +17,6 @@ public:
     ClCategory *findCategory(int number);
     ClCategory *findCategory(char *value);
 
-    ClDataset *searchDescendent(int number);
-    ClDataset *searchDescendent(char *value);
-    ClDataset *searchDescendent(int number, char *value);
-
     void print() { toStream(cout); }
     void printAll() { allToStream(cout); }
 

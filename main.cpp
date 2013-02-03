@@ -9,6 +9,7 @@ using namespace std;
 #include "category.h"
 #include "charbuffer.h"
 #include "dataset.h"
+#include "query.h"
 
 
 ClDataset *read(ifstream &file);
@@ -20,21 +21,38 @@ enum categoryStatus { number, partNumber, value };
 int main()
 {
     ifstream file;
-    file.open("test2.txt");
+    file.open("sample.txt");
     if (!file) {
         cout << "Keine Datei mit diesem Namen vorhanden." << endl;
     }
     ClDataset *dataset = read(file);
     file.close();
 
-    dataset->printAll();
+//    dataset->printAll();
 
 //    ofstream out;
 //    out.open("test-write.txt");
 //    dataset->allToStream(out);
 //    out.close();
 
+    ClQuery *query = new ClQuery(dataset);
+    query->addQuery(451, "Sitzung");
+//    query->addQuery(2, "1990");
+//    query->addQuery(98, "konv-10");
+//    query->addQuery(39, "blubber");
+//    query->addQuery(479, "Illuminati");
+//    query->addQuery(76, "mpier");
+//    query->addQuery(410, "New");
+    query->setConnector(orConnect);
+    query->execute();
+    query->toStream(cout);
 
+//    query = new ClQuery(dataset);
+//    query->addQuery(410, "New New");
+//    query->addQuery(410, "Oslo");
+//    query->addQuery(76, "mpier");
+//    query->execute();
+//    query->toStream(cout);
 
     return 0;
 }
@@ -160,10 +178,6 @@ ClDataset *read(ifstream& file)
             }
             break;
 
-
-//        case '\r':
-//            // Carriage returns ignorieren
-//            break;
 
         default:
             buffer->push(symbol);
