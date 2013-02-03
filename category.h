@@ -20,6 +20,8 @@ public:
     void setNext(ClCategory *category) { next = category; }
     ClCategory *getNext() { return next; }
 
+    char *find(char *value);
+
     void print();
 
 private:

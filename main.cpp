@@ -77,11 +77,12 @@ void read(ifstream& file)
                 }
                 // Bei normaler Kategorienummer, Kategorie initialisieren
                 else {
+                    categoryNumber = atoi(buffer->getString());
                     if (first == NULL) {
-                        first = new ClCategory(atoi(buffer->getString()));
+                        first = new ClCategory(categoryNumber);
                         category = first;
                     } else {
-                        next = new ClCategory(atoi(buffer->getString()));
+                        next = new ClCategory(categoryNumber);
                         category->setNext(next);
                         category = category->getNext();
                     }
@@ -98,7 +99,7 @@ void read(ifstream& file)
             categoryNumber = atoi(buffer->getString());
             if (categoryStatus == number) {
                 if (categoryNumber != category->getNumber()) {
-                    next = new ClCategory(atoi(buffer->getString()));
+                    next = new ClCategory(categoryNumber);
                     category->setNext(next);
                     category = category->getNext();
                 }
@@ -122,6 +123,7 @@ void read(ifstream& file)
             if (categoryStatus == value) {
                 // Kategoriewert setzen, wenn die Datei nach dem Zeilenumbruch
                 // durch eine Kategorinummer fortgesetzt wird
+                // Nichts unternehmen, wenn die Zeile einen Informationsbereich fortsetzt
                 if (isAtCategoryLineStart(file)) {
                     categoryValue = new char[strlen(buffer->getString())+1];
                     strcpy(categoryValue, buffer->getString());
@@ -133,19 +135,12 @@ void read(ifstream& file)
                     categoryStatus = number;
                     buffer->reset();
                 }
-//                // Nichts unternehmen, wenn die Zeile einen Informationsbereich fortsetzt
-//                else {
-//                    // Buffer wird weiter gefüllt
-//                    break;
-//                }
-//            } else {
-//                // TODO: Warnung bei Zeilenende nach leerer Kategorie, wenn Puffer gefüllt ??
             }
             break;
 
 
         case '\r':
-            // Ignore carriage returns, TODO: check if those should be there in the first place
+            // Carriage returns ignorieren
             break;
 
         default:
@@ -159,7 +154,7 @@ void read(ifstream& file)
     }
 }
 
-// TODO: Auf korrektes Endsymbol testen, '.' oder ';'
+
 bool isAtCategoryLineStart(ifstream& file)
 {
     bool result = true;
@@ -172,6 +167,9 @@ bool isAtCategoryLineStart(ifstream& file)
             result = false;
             break;
         }
+    }
+    if (result && (symbol != '.') && (symbol != ':')) {
+        result = false;
     }
     for (count -= 1, file.putback(symbol); count >= 0; count--) {
         file.putback(linestart[count]);

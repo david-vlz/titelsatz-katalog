@@ -2,6 +2,8 @@
 
 using namespace std;
 
+#include <string.h>
+
 #include "category.h"
 
 ClCategory::ClCategory()
@@ -45,6 +47,16 @@ void ClCategory::addValue(char *value)
         allocValueSpace(1);
         values[valueCount++] = value;
     }
+}
+
+char *ClCategory::find(char *value)
+{
+    for (int i = 0; i < valueCount; i++) {
+        if (strstr(values[i], value)) {
+            return values[i];
+        }
+    }
+    return NULL;
 }
 
 void ClCategory::allocValueSpace(int sizeToAdd)
