@@ -22,6 +22,7 @@ public:
     ClDataset *searchDescendent(int number, char *value);
 
     void print();
+    void printAll();
 
 private:
     ClCategory *firstCategory;

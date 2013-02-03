@@ -2,12 +2,13 @@
 
 using namespace std;
 
+#include <cstdlib>
 #include <fstream>
 #include <string.h>
-#include <cstdlib>
 
-#include "charbuffer.h"
 #include "category.h"
+#include "charbuffer.h"
+#include "dataset.h"
 
 
 void read(ifstream& file);
@@ -19,7 +20,7 @@ enum categoryStatus { number, partNumber, value };
 int main()
 {
     ifstream file;
-    file.open("test-data-2.txt");
+    file.open("sample-data.txt");
     if (!file) {
         cout << "Keine Datei mit diesem Namen vorhanden." << endl;
     }
@@ -46,14 +47,26 @@ void read(ifstream& file)
     ClCategory *category = NULL;
     ClCategory *next = NULL;
 
+    ClDataset *firstDataset = NULL;
+    ClDataset *dataset = NULL;
+    ClDataset *nextDataset = NULL;
+
     for (file.get(symbol); !file.eof(); file.get(symbol)) {
 
         switch(symbol) {
 
         case ':':
 
-            // Datensatzbeginn erkennen
+            // Datensatzbeginn erkennen und Datensatz initialisieren
             if ((datasetStatus == outside) && (!strcmp(buffer->getString(), "000"))) {
+                if (firstDataset == NULL) {
+                    firstDataset = new ClDataset;
+                    dataset = firstDataset;
+                } else {
+                    nextDataset = new ClDataset;
+                    dataset->setNext(nextDataset);
+                    dataset = dataset->getNext();
+                }
                 datasetStatus = inside;
             }
 
@@ -66,6 +79,7 @@ void read(ifstream& file)
             if (datasetStatus == inside) {
                 // Datensatzende behandeln
                 if (!strcmp(buffer->getString(), "999")) {
+                    first = NULL;
                     datasetStatus = outside;
                     categoryStatus = number;
                 }
@@ -79,6 +93,7 @@ void read(ifstream& file)
                     if (first == NULL) {
                         first = new ClCategory(categoryNumber);
                         category = first;
+                        dataset->setFirstCategory(first);
                     } else {
                         next = new ClCategory(categoryNumber);
                         category->setNext(next);
@@ -147,9 +162,8 @@ void read(ifstream& file)
 
         }
     }
-    for (ClCategory *c = first; c != NULL; c = c->getNext()) {
-        c->print();
-    }
+
+    firstDataset->printAll();
 }
 
 

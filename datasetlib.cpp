@@ -34,4 +34,17 @@ ClCategory *ClDataset::findCategory(char *value)
     return NULL;
 }
 
+void ClDataset::print()
+{
+    for (ClCategory *cat = firstCategory; cat != NULL; cat = cat->getNext()) {
+        cat->print();
+    }
+    cout << "999:" << endl;
+}
 
+void ClDataset::printAll()
+{
+    for (ClDataset *ds = this; ds != NULL; ds = ds->getNext()) {
+        ds->print();
+    }
+}
