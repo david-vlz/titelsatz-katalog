@@ -76,29 +76,29 @@ void ClCategory::allocValueSpace(int sizeToAdd)
     }
 }
 
-void ClCategory::print()
+void ClCategory::toStream(ostream &stream)
 {
     if (multipleValuesPossible) {
         for (int i = 0; i < valueCount; i++) {
-            printAsTriple(number);
-            cout << '.';
-            printAsTriple(i+1);
-            cout << ':' << values[i] << endl;
+            numberAsTripleToStream(number, stream);
+            stream << '.';
+            numberAsTripleToStream(i+1, stream);
+            stream << ':' << values[i] << endl;
         }
     } else {
-        printAsTriple(number);
-        cout << ':' << values[0] << endl;
+        numberAsTripleToStream(number, stream);
+        stream << ':' << values[0] << endl;
     }
 }
 
-void ClCategory::printAsTriple(int i)
+void ClCategory::numberAsTripleToStream(int i, ostream &stream)
 {
     if (i == 0) {
-        cout << "000";
+        stream << "000";
         return;
     }
     for (int j = i; j < 100; j *= 10) {
-        cout << '0';
+        stream << '0';
     }
-    cout << i;
+    stream << i;
 }

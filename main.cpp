@@ -11,7 +11,7 @@ using namespace std;
 #include "dataset.h"
 
 
-void read(ifstream& file);
+ClDataset *read(ifstream &file);
 bool isAtCategoryLineStart(ifstream &file);
 
 enum datasetStatus { inside, outside };
@@ -20,18 +20,27 @@ enum categoryStatus { number, partNumber, value };
 int main()
 {
     ifstream file;
-    file.open("sample-data.txt");
+    file.open("sample.txt");
     if (!file) {
         cout << "Keine Datei mit diesem Namen vorhanden." << endl;
     }
-    read(file);
+    ClDataset *dataset = read(file);
     file.close();
+
+    dataset->printAll();
+
+//    ofstream out;
+//    out.open("test-write.txt");
+//    dataset->allToStream(out);
+//    out.close();
+
+
 
     return 0;
 }
 
 
-void read(ifstream& file)
+ClDataset *read(ifstream& file)
 {
     char symbol;
     ClCharBuffer *buffer = new ClCharBuffer(81);
@@ -43,9 +52,9 @@ void read(ifstream& file)
     int categoryNumber = 0;
     char *categoryValue;
 
-    ClCategory *first = NULL;
+    ClCategory *firstCategoty = NULL;
     ClCategory *category = NULL;
-    ClCategory *next = NULL;
+    ClCategory *nextCategory = NULL;
 
     ClDataset *firstDataset = NULL;
     ClDataset *dataset = NULL;
@@ -79,7 +88,7 @@ void read(ifstream& file)
             if (datasetStatus == inside) {
                 // Datensatzende behandeln
                 if (!strcmp(buffer->getString(), "999")) {
-                    first = NULL;
+                    firstCategoty = NULL;
                     datasetStatus = outside;
                     categoryStatus = number;
                 }
@@ -90,13 +99,13 @@ void read(ifstream& file)
                 // Bei normaler Kategorienummer, Kategorie initialisieren
                 else {
                     categoryNumber = atoi(buffer->getString());
-                    if (first == NULL) {
-                        first = new ClCategory(categoryNumber);
-                        category = first;
-                        dataset->setFirstCategory(first);
+                    if (firstCategoty == NULL) {
+                        firstCategoty = new ClCategory(categoryNumber);
+                        category = firstCategoty;
+                        dataset->setFirstCategory(firstCategoty);
                     } else {
-                        next = new ClCategory(categoryNumber);
-                        category->setNext(next);
+                        nextCategory = new ClCategory(categoryNumber);
+                        category->setNext(nextCategory);
                         category = category->getNext();
                     }
                     readingMultiValuedCategory = false;
@@ -112,8 +121,8 @@ void read(ifstream& file)
             categoryNumber = atoi(buffer->getString());
             if (categoryStatus == number) {
                 if (categoryNumber != category->getNumber()) {
-                    next = new ClCategory(categoryNumber);
-                    category->setNext(next);
+                    nextCategory = new ClCategory(categoryNumber);
+                    category->setNext(nextCategory);
                     category = category->getNext();
                 }
                 readingMultiValuedCategory = true;
@@ -152,9 +161,9 @@ void read(ifstream& file)
             break;
 
 
-        case '\r':
-            // Carriage returns ignorieren
-            break;
+//        case '\r':
+//            // Carriage returns ignorieren
+//            break;
 
         default:
             buffer->push(symbol);
@@ -163,11 +172,11 @@ void read(ifstream& file)
         }
     }
 
-    firstDataset->printAll();
+    return firstDataset;
 }
 
 
-bool isAtCategoryLineStart(ifstream& file)
+bool isAtCategoryLineStart(ifstream &file)
 {
     bool result = true;
     char symbol;

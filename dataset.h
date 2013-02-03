@@ -21,8 +21,11 @@ public:
     ClDataset *searchDescendent(char *value);
     ClDataset *searchDescendent(int number, char *value);
 
-    void print();
+    void print() { toStream(cout); }
     void printAll();
+
+    void toStream(ostream &stream);
+    void allToStream(ostream &stream);
 
 private:
     ClCategory *firstCategory;

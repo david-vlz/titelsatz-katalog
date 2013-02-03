@@ -2,6 +2,7 @@
 
 using namespace std;
 
+#include <istream>
 #include <string.h>
 
 #include "dataset.h"
@@ -34,17 +35,24 @@ ClCategory *ClDataset::findCategory(char *value)
     return NULL;
 }
 
-void ClDataset::print()
-{
-    for (ClCategory *cat = firstCategory; cat != NULL; cat = cat->getNext()) {
-        cat->print();
-    }
-    cout << "999:" << endl;
-}
-
 void ClDataset::printAll()
 {
-    for (ClDataset *ds = this; ds != NULL; ds = ds->getNext()) {
-        ds->print();
+    for (ClDataset *dataset = this; dataset != NULL; dataset = dataset->getNext()) {
+        dataset->print();
+    }
+}
+
+void ClDataset::toStream(ostream &stream)
+{
+    for (ClCategory *cat = firstCategory; cat != NULL; cat = cat->getNext()) {
+        cat->toStream(stream);
+    }
+    stream << "999:" << endl << endl;
+}
+
+void ClDataset::allToStream(ostream &stream)
+{
+    for (ClDataset *dataset = this; dataset != NULL; dataset = dataset->getNext()) {
+        dataset->toStream(stream);
     }
 }

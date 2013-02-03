@@ -22,7 +22,9 @@ public:
 
     char *find(char *value);
 
-    void print();
+    void toStream(ostream &stream);
+
+    void print() { toStream(cout); }
 
 private:
     int number;
@@ -37,6 +39,7 @@ private:
     ClCategory *next;
 
     void printAsTriple(int i);
+    void numberAsTripleToStream(int i, ostream &stream);
 };
 
 #endif // CATEGORY_H
