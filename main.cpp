@@ -169,7 +169,8 @@ bool isAtCategoryLineStart(ifstream& file)
     if (result && (symbol != '.') && (symbol != ':')) {
         result = false;
     }
-    for (count -= 1, file.putback(symbol); count >= 0; count--) {
+    file.putback(symbol);
+    for (count--; count >= 0; count--) {
         file.putback(linestart[count]);
     }
     return result;
