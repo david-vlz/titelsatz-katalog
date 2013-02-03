@@ -6,9 +6,25 @@
 class ClDataset
 {
 public:
-    void addCategory();
+    ClDataset();
+
+    void setFirstCategory(ClCategory *category) { firstCategory = category;  }
+    ClCategory *getFirstCategory() { return firstCategory; }
+
+    void setNext(ClDataset *category) { next = category; }
+    ClDataset *getNext() { return next; }
+
+    ClCategory *findCategory(int number);
+    ClCategory *findCategory(char *value);
+
+    ClDataset *searchDescendent(int number);
+    ClDataset *searchDescendent(char *value);
+    ClDataset *searchDescendent(int number, char *value);
+
+    void print();
+
 private:
-    ClCategory *category;
+    ClCategory *firstCategory;
     ClDataset *next;
 };
 

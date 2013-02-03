@@ -63,15 +63,13 @@ void read(ifstream& file)
                 break;
             }
 
-            // Kategorienummer behandeln
             if (datasetStatus == inside) {
-
                 // Datensatzende behandeln
                 if (!strcmp(buffer->getString(), "999")) {
                     datasetStatus = outside;
                     categoryStatus = number;
                 }
-                // Erweiterung einer Kategorienummer
+                // Erweiterung einer Kategorienummer markieren
                 else if (categoryStatus == partNumber) {
                     categoryStatus = value;
                 }
@@ -95,7 +93,7 @@ void read(ifstream& file)
 
         case '.':
             // Kategorie initialisieren, wenn neue Kategorienummer erwartet wird
-            // und alte Kategorie nicht die gleiche Nummer trägt
+            // und alte Kategorie nicht die gleiche Nummer trägt wie die gelesene
             categoryNumber = atoi(buffer->getString());
             if (categoryStatus == number) {
                 if (categoryNumber != category->getNumber()) {
