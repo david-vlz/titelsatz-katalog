@@ -1,6 +1,8 @@
 #ifndef CATEGORY_H
 #define CATEGORY_H
 
+enum matchingStatus { full, partialText, none };
+
 class ClCategory
 {
 public:
@@ -20,7 +22,7 @@ public:
     void setNext(ClCategory *category) { next = category; }
     ClCategory *getNext() { return next; }
 
-    char *find(char *value);
+    char *find(char *text);
 
     void toStream(ostream &stream);
 

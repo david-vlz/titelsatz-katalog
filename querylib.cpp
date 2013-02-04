@@ -34,7 +34,7 @@ void ClQuery::addQuery(int number, char *value)
 }
 
 
-ClDataset** ClQuery::execute()
+void ClQuery::execute()
 {
     ClCategory *possibleMatch;
     bool allConditionsMet = true;
@@ -68,8 +68,6 @@ ClDataset** ClQuery::execute()
             addToResults(dataset);
         }
     }
-
-    return results;
 }
 
 

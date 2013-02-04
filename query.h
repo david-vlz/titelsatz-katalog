@@ -1,7 +1,7 @@
 #ifndef QUERY_H
 #define QUERY_H
 
-enum connector { andConnect, orConnect };
+enum connector { andConnect, orConnect, invalid };
 
 /**
   * Ein Abfrage besteht aus mehreren Instanzen von ClCategory,
@@ -20,9 +20,10 @@ public:
 
     void setConnector(enum connector logicalConnector) { logConn = logicalConnector; }
 
-    ClDataset **execute();
+    void execute();
 
     void toStream(ostream &stream);
+    void print() { toStream(cout); }
 
 private:
     ClDataset *base;

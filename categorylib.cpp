@@ -49,10 +49,10 @@ void ClCategory::addValue(char *value)
     }
 }
 
-char *ClCategory::find(char *value)
+char *ClCategory::find(char *text)
 {
     for (int i = 0; i < valueCount; i++) {
-        if (strstr(values[i], value)) {
+        if (strstr(values[i], text)) {
             return values[i];
         }
     }

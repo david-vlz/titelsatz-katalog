@@ -151,58 +151,70 @@ void ClCatalogue::load(ifstream &file)
 
 int ClCatalogue::queryDialogue()
 {
-    char queryStatusInput;
-    char conditonStatusInput;
+    char input[128];
+    int conditionStatusInput;
     int conditionCount = 0;
-    bool newCondition = true;
+    int newCondition = 1;
     int number;
     char *value;
     query = new ClQuery(start);
+    enum connector connector;
     char queryConnectInput;
 
     cout << "Moechten sie eine Abfrage starten? [j/n]: ";
-    cin >> queryStatusInput;
+    cin >> input;
+    switch(isValidYesNoInput(input)) {
 
-    if (queryStatusInput == 'j') {
+    case 1:
 
-        while (newCondition) {
+        while (newCondition == 1) {
             cout << "~~ Bedingung " << ++conditionCount << " ~~" << endl;
             cout << "Suche nach Kategorie-Nr.: ";
-            cin >> number;
+            cin >> input;
+            number =  isValidCategoryNumber(input);
+            if (number == -1) {
+                cout << "-> Bitte geben sie eine ganze Zahl von 0 bis 999 ein." << endl;
+                conditionCount--;
+                continue;
+            }
             cout << "mit Text: ";
             value = new char[128];
             cin >> value;
-            cout << "Möchten sie eine weitere Bedingung hinzufuegen? [j/n]: ";
-            cin >> conditonStatusInput;
-            if (conditonStatusInput == 'n') {
-                newCondition = false;
-            } else if (!(conditonStatusInput == 'j')) {
-                // TODO
-                return 1;
-            }
             query->addQuery(number, value);
-        }
 
-        if (conditionCount > 1) {
-            cout << "Wie moechten sie die Bedingungen verknuepfen? [u,und,UND/o,oder,ODER]" << endl;
-            cin >> queryConnectInput;
-            if (queryConnectInput == 'o') {
-                query->setConnector(orConnect);
-            } else if (queryConnectInput == 'u') {
-                query->setConnector(andConnect);
-            } else {
-                //TODO
+            newCondition = -1;
+            while (newCondition == -1) {
+                cout << "Moechten sie eine weitere Bedingung hinzufuegen? [j/n]: ";
+                cin >> input;
+                newCondition = isValidYesNoInput(input);
+                if (newCondition == -1) {
+                    cout << "-> Bitte antworten sie mit \'j\' fuer ja oder \'n\' fuer nein." << endl;
+                }
             }
+
         }
-
+        if (conditionCount > 1) {
+            connector = invalid;
+            while (connector == invalid) {
+                cout << "Wie moechten sie die Bedingungen verknuepfen? [u,und,UND/o,oder,ODER]" << endl;
+                cin >> input;
+                connector = isValidLogicalConnectorInput(input);
+                if (connector == invalid) {
+                    cout << "-> Bitte geben sie \'u\', \'und\', \'UND\' fuer eine und-Verknuepfung oder \'o\', \'oder\', \'ODER\' fuer eine oderVerknuepfung ein." << endl;
+                }
+            }
+            query->setConnector(connector);
+        }
         query->execute();
-        query->toStream(cout);
-
+        query->print();
         return 1;
-    } else if (queryStatusInput == 'n'){
+
+    case 0:
+        cout << "Ciao!" << endl;
         return 0;
-    } else {
-        //TODO
+
+    default:
+        cout << "-> Bitte antworten sie mit \'j\' fuer ja oder \'n\' fuer nein." << endl;
         return 1;
     }
 
@@ -230,6 +242,47 @@ bool ClCatalogue::isAtCategoryLineStart(ifstream &file)
     }
     return result;
 }
+
+int ClCatalogue::isValidCategoryNumber(char *str)
+{
+    int number = -1;
+    bool valid = true;
+    for (unsigned int i = 0; i < strlen(str); i++) {
+        if (!isdigit(str[i])) {
+            valid = false;
+            break;
+        }
+    }
+    if (valid) {
+        number = atoi(str);
+        number = (number < 1000) ? number : -1;
+    }
+    return number;
+}
+
+int ClCatalogue::isValidYesNoInput(char *input)
+{
+    if (!strcmp(input, "j")) {
+        return 1;
+    } else if (!strcmp(input, "n")) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+
+connector ClCatalogue::isValidLogicalConnectorInput(char *input)
+{
+    if (!strcmp(input, "u") || !strcmp(input, "und") || !strcmp(input, "UND")) {
+        return andConnect;
+    } else if (!strcmp(input, "o") || !strcmp(input, "oder") || !strcmp(input, "ODER")) {
+        return orConnect;
+    } else {
+        return invalid;
+    }
+}
+
+
 
 
 

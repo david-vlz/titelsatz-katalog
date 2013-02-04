@@ -16,19 +16,18 @@ public:
 
     int queryDialogue();
 
-    ClDataset **search(int number, char *value);
-
     void print() { start->printAll(); }
-
-    // DEBUG
-    ClDataset *getStart() { return start; }
 
 private:
     ClDataset *start;
-
     ClQuery *query;
 
     bool isAtCategoryLineStart(ifstream &file);
+
+    int isValidCategoryNumber(char *number);
+    int isValidYesNoInput(char *input);
+    connector isValidLogicalConnectorInput(char *input);
+
 };
 
 #endif // CATALOGUE_H
