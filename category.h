@@ -8,6 +8,7 @@ class ClCategory
 public:
     ClCategory();
     ClCategory(int initNumber);
+    ~ClCategory();
 
     void setNumber(int i) { number = i; }
     int getNumber() { return number; }
@@ -36,7 +37,7 @@ private:
     int valueCount;
     int maxValues;
     bool multipleValuesPossible;
-    void allocValueSpace(int sizeToAdd);
+    void reallocateValueSpace(int sizeToAdd);
 
     ClCategory *next;
 

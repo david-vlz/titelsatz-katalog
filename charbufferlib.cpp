@@ -26,3 +26,10 @@ void ClCharBuffer::push(char c)
         buffer = newBuffer;
     }
 }
+
+void ClCharBuffer::readInput(char stopCharacter) {
+    char c = '\0';
+    for (c = cin.get(); c != stopCharacter; c = cin.get()) {
+        push(c);
+    }
+}

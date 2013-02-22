@@ -12,8 +12,24 @@ using namespace std;
 
 ClCatalogue::ClCatalogue()
 {
-    start = NULL;
+    base = NULL;
     query = NULL;
+}
+
+ClCatalogue::~ClCatalogue()
+{
+    ClDataset *datasetOne = base;
+    ClDataset *datasetTwo;
+    if (datasetOne != NULL) {
+        datasetTwo = datasetOne->getNext();
+        delete datasetOne;
+        while (datasetTwo != NULL) {
+            datasetOne = datasetTwo;
+            datasetTwo = datasetOne->getNext();
+            delete datasetOne;
+        }
+    }
+    delete query;
 }
 
 void ClCatalogue::load(ifstream &file)
@@ -111,13 +127,13 @@ void ClCatalogue::load(ifstream &file)
             }
             break;
 
+        // carriage returns ignorieren
         case '\r':
             break;
 
         case '\n':
             if (datasetStatus == outside) {
                 buffer->reset();
-                 // TODO: Hier auf fehlerhafte Eingaben zwischen Datensätzen prüfen
                 break;
             }
 
@@ -146,23 +162,23 @@ void ClCatalogue::load(ifstream &file)
 
         }
     }
-    start = firstDataset;
+    base = firstDataset;
+    delete buffer;
 }
 
 int ClCatalogue::queryDialogue()
 {
-    char input[128];
-    int conditionStatusInput;
+    ClCharBuffer *buffer = new ClCharBuffer(40);
+    char input[512];
     int conditionCount = 0;
     int newCondition = 1;
     int number;
     char *value;
-    query = new ClQuery(start);
+    query = new ClQuery(base);
     enum connector connector;
-    char queryConnectInput;
 
     cout << "Moechten sie eine Abfrage starten? [j/n]: ";
-    cin >> input;
+    copyInput(buffer, input);
     switch(isValidYesNoInput(input)) {
 
     case 1:
@@ -170,7 +186,7 @@ int ClCatalogue::queryDialogue()
         while (newCondition == 1) {
             cout << "~~ Bedingung " << ++conditionCount << " ~~" << endl;
             cout << "Suche nach Kategorie-Nr.: ";
-            cin >> input;
+            copyInput(buffer, input);
             number =  isValidCategoryNumber(input);
             if (number == -1) {
                 cout << "-> Bitte geben sie eine ganze Zahl von 0 bis 999 ein." << endl;
@@ -178,14 +194,13 @@ int ClCatalogue::queryDialogue()
                 continue;
             }
             cout << "mit Text: ";
-            value = new char[128];
-            cin >> value;
-            query->addQuery(number, value);
+            value = getInput(buffer);
+            query->addCondition(number, value);
 
             newCondition = -1;
             while (newCondition == -1) {
                 cout << "Moechten sie eine weitere Bedingung hinzufuegen? [j/n]: ";
-                cin >> input;
+                copyInput(buffer, input);
                 newCondition = isValidYesNoInput(input);
                 if (newCondition == -1) {
                     cout << "-> Bitte antworten sie mit \'j\' fuer ja oder \'n\' fuer nein." << endl;
@@ -197,7 +212,7 @@ int ClCatalogue::queryDialogue()
             connector = invalid;
             while (connector == invalid) {
                 cout << "Wie moechten sie die Bedingungen verknuepfen? [u,und,UND/o,oder,ODER]" << endl;
-                cin >> input;
+                copyInput(buffer, input);
                 connector = isValidLogicalConnectorInput(input);
                 if (connector == invalid) {
                     cout << "-> Bitte geben sie \'u\', \'und\', \'UND\' fuer eine und-Verknuepfung oder \'o\', \'oder\', \'ODER\' fuer eine oderVerknuepfung ein." << endl;
@@ -217,7 +232,8 @@ int ClCatalogue::queryDialogue()
         cout << "-> Bitte antworten sie mit \'j\' fuer ja oder \'n\' fuer nein." << endl;
         return 1;
     }
-
+    delete query;
+    delete buffer;
 }
 
 bool ClCatalogue::isAtCategoryLineStart(ifstream &file)
@@ -233,7 +249,7 @@ bool ClCatalogue::isAtCategoryLineStart(ifstream &file)
             break;
         }
     }
-    if (result && (symbol != '.') && (symbol != ':')) {
+    if (result && !((symbol != '.') || (symbol != ':'))) {
         result = false;
     }
     file.putback(symbol);
@@ -241,6 +257,22 @@ bool ClCatalogue::isAtCategoryLineStart(ifstream &file)
         file.putback(linestart[count]);
     }
     return result;
+}
+
+char *ClCatalogue::getInput(ClCharBuffer *buffer) {
+    char *result;
+    buffer->reset();
+    buffer->readInput('\n');
+    result = strdup(buffer->getString());
+    buffer->reset();
+    return result;
+}
+
+void ClCatalogue::copyInput(ClCharBuffer *buffer, char *destination){
+    buffer->reset();
+    buffer->readInput('\n');
+    strcpy(destination, buffer->getString());
+    buffer->reset();
 }
 
 int ClCatalogue::isValidCategoryNumber(char *str)

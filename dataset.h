@@ -7,6 +7,7 @@ class ClDataset
 {
 public:
     ClDataset();
+    ~ClDataset();
 
     void setFirstCategory(ClCategory *category) { firstCategory = category;  }
     ClCategory *getFirstCategory() { return firstCategory; }

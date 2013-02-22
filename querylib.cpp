@@ -11,26 +11,42 @@ using namespace std;
 ClQuery::ClQuery(ClDataset *data)
 {
     base = data;
-    firstQuery = NULL;
-    nextQuery = NULL;
-    lastQuery = NULL;
+    firstCondition = NULL;
+    nextCondition = NULL;
+    lastCondition = NULL;
     logConn = andConnect;
     results = NULL;
     resultCount = 0;
     maxResults = 4;
 }
 
-void ClQuery::addQuery(int number, char *value)
+ClQuery::~ClQuery()
 {
-    if (firstQuery == NULL) {
-        firstQuery = new ClCategory(number);
-        lastQuery =  firstQuery;
-    } else {
-        nextQuery = new ClCategory(number);
-        lastQuery->setNext(nextQuery);
-        lastQuery = lastQuery->getNext();
+    ClCategory *categoryOne = firstCondition;
+    ClCategory *categoryTwo;
+    if (categoryOne != NULL) {
+        categoryTwo = categoryOne->getNext();
+        delete categoryOne;
+        while (categoryTwo != NULL) {
+            categoryOne = categoryTwo;
+            categoryTwo = categoryOne->getNext();
+            delete categoryOne;
+        }
     }
-    lastQuery->setValue(value);
+    delete results;
+}
+
+void ClQuery::addCondition(int number, char *value)
+{
+    if (firstCondition == NULL) {
+        firstCondition = new ClCategory(number);
+        lastCondition =  firstCondition;
+    } else {
+        nextCondition = new ClCategory(number);
+        lastCondition->setNext(nextCondition);
+        lastCondition = lastCondition->getNext();
+    }
+    lastCondition->setValue(value);
 }
 
 
@@ -41,7 +57,7 @@ void ClQuery::execute()
 
     for (ClDataset *dataset = base; dataset != NULL; dataset = dataset->getNext()) {
 
-        for (ClCategory *query = firstQuery; query != NULL; query = query->getNext()) {
+        for (ClCategory *query = firstCondition; query != NULL; query = query->getNext()) {
 
             allConditionsMet = true;
 
@@ -75,7 +91,7 @@ void ClQuery::toStream(ostream &stream)
 {
     stream << endl << "=== Abfrage ===" << endl;
     bool firstIteration = true;
-    for (ClCategory *query = firstQuery; query != NULL; query = query->getNext()) {
+    for (ClCategory *query = firstCondition; query != NULL; query = query->getNext()) {
         if (!firstIteration) {
             if (logConn == andConnect) {
                 stream << " UND";
@@ -97,7 +113,6 @@ void ClQuery::toStream(ostream &stream)
         stream << "=== Ergebnisse ===" << endl;
         for (int i = 0; i < resultCount; i++) {
             stream << "Ergbnis [" << i+1 << "]" << endl;
-//            stream << "Kat.Nr.\tInhalt" << endl;
             stream << "-----------" << endl;
             results[i]->toStream(stream);
         }

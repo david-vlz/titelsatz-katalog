@@ -5,6 +5,7 @@ class ClCharBuffer
 {
 public:
     ClCharBuffer(int initSize);
+    ~ClCharBuffer() { delete buffer; }
 
     void push(char c);
 
@@ -21,6 +22,8 @@ public:
         buffer[counter] = '\0';
         return buffer;
     }
+
+    void readInput(char stopCharacter);
 
 private:
     char *buffer;

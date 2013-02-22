@@ -12,7 +12,7 @@ int main()
     ClCatalogue *catalogue;
     int dialogueStatus = 1;
 
-    file.open("sample-data.txt");
+    file.open("Neugebauer.txt");
     if (!file) {
         cout << "Keine Datei mit diesem Namen vorhanden." << endl;
     }
@@ -26,6 +26,6 @@ int main()
         dialogueStatus = catalogue->queryDialogue();
     }
 
-    return 0;
+    return dialogueStatus;
 }
 

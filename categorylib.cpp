@@ -17,6 +17,14 @@ ClCategory::ClCategory()
     next = NULL;
 }
 
+ClCategory::~ClCategory()
+{
+    for (int i = 0; i < valueCount; i++) {
+        delete values[i];
+    }
+    delete values;
+}
+
 ClCategory::ClCategory(int initNumber)
 {
     number = initNumber;
@@ -44,7 +52,7 @@ void ClCategory::addValue(char *value)
     if (valueCount == 0) {
         setValue(value);
     } else {
-        allocValueSpace(1);
+        reallocateValueSpace(1);
         values[valueCount++] = value;
     }
 }
@@ -59,7 +67,7 @@ char *ClCategory::find(char *text)
     return NULL;
 }
 
-void ClCategory::allocValueSpace(int sizeToAdd)
+void ClCategory::reallocateValueSpace(int sizeToAdd)
 {
     bool needToReallocate = false;
     while ((valueCount + sizeToAdd) > maxValues) {

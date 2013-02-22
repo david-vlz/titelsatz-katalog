@@ -3,33 +3,28 @@
 
 enum connector { andConnect, orConnect, invalid };
 
-/**
-  * Ein Abfrage besteht aus mehreren Instanzen von ClCategory,
-  * die die abzufragenden Werte enthalten, sowie einer Angabe
-  * der Art der logischen Verknüpfung dieser Werte
-  * Durch Vergleich mit der Datenbasis ("base") mit diesen Abfragen
-  * wird eine Liste von Titelsätzen ("results") erzeugt, die der Anfrage
-  * entsprechen.
-  */
 class ClQuery
 {
 public:
     ClQuery(ClDataset *data);
+    ~ClQuery();
 
-    void addQuery(int number, char *value);
+    void addCondition(int number, char *value);
 
     void setConnector(enum connector logicalConnector) { logConn = logicalConnector; }
 
     void execute();
+
+    ClDataset **getResults() { return results; }
 
     void toStream(ostream &stream);
     void print() { toStream(cout); }
 
 private:
     ClDataset *base;
-    ClCategory *firstQuery;
-    ClCategory *nextQuery;
-    ClCategory *lastQuery;
+    ClCategory *firstCondition;
+    ClCategory *nextCondition;
+    ClCategory *lastCondition;
     enum connector logConn;
     ClDataset **results;
     int resultCount;

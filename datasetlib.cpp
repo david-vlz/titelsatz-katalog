@@ -15,6 +15,21 @@ ClDataset::ClDataset()
     next = NULL;
 }
 
+ClDataset::~ClDataset()
+{
+    ClCategory *categoryOne = firstCategory;
+    ClCategory *categoryTwo;
+    if (categoryOne != NULL) {
+        categoryTwo = categoryOne->getNext();
+        delete categoryOne;
+        while (categoryTwo != NULL) {
+            categoryOne = categoryTwo;
+            categoryTwo = categoryOne->getNext();
+            delete categoryOne;
+        }
+    }
+}
+
 ClCategory *ClDataset::findCategory(int number)
 {
     for (ClCategory *cat = firstCategory; cat != NULL; cat = cat->getNext()) {
