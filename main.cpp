@@ -18,13 +18,14 @@ int main()
     do {
         cout << "Bitte geben sie den Namen der Datei ein, der die Katalogdatensätze enthaelt: " << endl;
         cin >> filename;
-        cout << "\'" << filename << "\'" << endl;
+        cin.ignore();
         file.open(filename);
         if (!file) {
-            cout << "Keine Datei mit diesem Namen vorhanden." << endl;
+            cout << "Keine Datei mit diesem Namen vorhanden oder Datei konnte nicht geoeffnet werden." << endl;
             fileStatus = 0;
+        } else {
+            fileStatus = 1;
         }
-        cin.ignore();
     } while (fileStatus == 0);
 
     catalogue = new ClCatalogue;
