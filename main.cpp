@@ -9,13 +9,23 @@ using namespace std;
 int main()
 {
     ifstream file;
+    int fileStatus = 1;
+    char filename[256];
+
     ClCatalogue *catalogue;
     int dialogueStatus = 1;
 
-    file.open("Neugebauer.txt");
-    if (!file) {
-        cout << "Keine Datei mit diesem Namen vorhanden." << endl;
-    }
+    do {
+        cout << "Bitte geben sie den Namen der Datei ein, der die Katalogdatensätze enthaelt: " << endl;
+        cin >> filename;
+        cout << "\'" << filename << "\'" << endl;
+        file.open(filename);
+        if (!file) {
+            cout << "Keine Datei mit diesem Namen vorhanden." << endl;
+            fileStatus = 0;
+        }
+        cin.ignore();
+    } while (fileStatus == 0);
 
     catalogue = new ClCatalogue;
     catalogue->load(file);
